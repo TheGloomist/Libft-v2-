@@ -1,18 +1,23 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        ::::::::            */
-/*   ft_memset.c                                        :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: iazaitce <iazaitce@student.codam.nl>         +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2025/05/01 17:17:41 by iazaitce      #+#    #+#                 */
-/*   Updated: 2025/05/19 13:56:16 by iazaitce      ########   odam.nl         */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include <libft.h>
+#include <stdio.h>
+#include <string.h>
 
 void	*ft_memset(void *s, int c, size_t n)
-{	
-	
+{
+	unsigned char *str;
+
+	str = s;
+	while(n > 0)
+	{
+		str[n-1] = (unsigned char)c;
+		n--;
+	}
+	return(s);
+}
+
+int main(void)
+{
+	char str[12] = "";
+	ft_memset(str, 'a', 4);
+	printf("after meset: %s\n", str);
+	return(0);
 }
