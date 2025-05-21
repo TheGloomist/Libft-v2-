@@ -1,6 +1,5 @@
-// #include <libft.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
+
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -16,23 +15,11 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		while (big[to_check + i] == little[i] && little[i])
 		{
 			i++;
-			if (i == strlen(little)) 
+			if (i == ft_strlen(little)) 
 				return ((char *)(big + to_check));
 		}	
 		to_check++;
 		i = 0;
 	}
 	return (NULL);
-}
-
-int main(void)
-{
-	const char *largestring = "Foo BamBar Bar";
-  const char *smallstring = "Bad";
-  char *ptr;
-
-  ptr = ft_strnstr(largestring, smallstring, 20);
-	printf ("It points to: %s\n", ptr);
-
-	return (0);
 }

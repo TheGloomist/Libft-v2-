@@ -6,16 +6,15 @@
 /*   By: iazaitce <iazaitce@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/19 15:47:10 by iazaitce      #+#    #+#                 */
-/*   Updated: 2025/05/19 18:17:55 by iazaitce      ########   odam.nl         */
+/*   Updated: 2025/05/21 01:09:03 by lindsay       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 size_t	strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	len_d;
-	size_t	len_s;
 	size_t	i;
 	// size_t	to_cat;
 	
@@ -33,10 +32,3 @@ size_t	strlcat(char *dst, const char *src, size_t size)
 	}
 	return (len_d + ft_strlen(src));
 }
-// else if (len_s < to_cat)
-	// {
-	// 	while(len_s--)
-	// 		dst[len_d + len_s - 1] = src[len_s - 1];
-	// 	len_s = ft_strlen(src);
-	// 	dst[len_d + len_s] = '\0';
-	// }

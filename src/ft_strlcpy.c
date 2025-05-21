@@ -6,11 +6,11 @@
 /*   By: iazaitce <iazaitce@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/19 14:40:22 by iazaitce      #+#    #+#                 */
-/*   Updated: 2025/05/19 15:46:55 by iazaitce      ########   odam.nl         */
+/*   Updated: 2025/05/21 00:57:05 by lindsay       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
@@ -26,6 +26,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		dst[size] = '\0';	
 	}
 	else
-		return (NULL);
+		return (0);
 	return (len);
 }

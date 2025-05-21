@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
@@ -12,12 +11,4 @@ void	*ft_memset(void *s, int c, size_t n)
 		n--;
 	}
 	return(s);
-}
-
-int main(void)
-{
-	char str[12] = "";
-	ft_memset(str, 'a', 4);
-	printf("after meset: %s\n", str);
-	return(0);
 }
