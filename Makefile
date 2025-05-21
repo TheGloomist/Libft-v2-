@@ -1,35 +1,37 @@
-NAME = libft.a
+# **************************************************************************** #
+#                                                                              #
+#                                                         ::::::::             #
+#    Makefile                                           :+:    :+:             #
+#                                                      +:+                     #
+#    By: iazaitce <iazaitce@student.codam.nl>         +#+                      #
+#                                                    +#+                       #
+#    Created: 2025/05/21 18:57:48 by iazaitce      #+#    #+#                  #
+#    Updated: 2025/05/21 19:09:34 by iazaitce      ########   odam.nl          #
+#                                                                              #
+# **************************************************************************** #
 
-#HEADERS := -I ./include
-SRC := $(shell find ./src -iname "*.c")
+NAME 		= libft.a
+CC 			= gcc 
+CFLAGS 		= -Wall -Wextra -Werror -g -fsanitize=address
 
-CFLAGS = -Wall -Werror -Wextra #-g -fsanitize=address
-CC = gcc
-
-OBJDIR = objs
-LIBFT_OBJ = ${SRC:.c=.o}
+#HEADERS	= -I ./include
+SRC 	= $(shell find ./src -iname "*.c")
+OBJS = $(SRC:%.c=%.o)
 
 all: $(NAME)
 
-$(NAME): $(LIBFT_OBJ)
-	@echo compiling libft...
-	@$(CC) $(CFLAGS) $(LIBFT_OBJ) -o $(NAME)
+%.o: %.c 
+	$(CC) $(CFLAGS) -c -o $@ $<
 
-$(OBJDIR)/%.o: src/%.c | $(OBJDIR)
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(OBJDIR):
-	@mkdir -p objs
-
+$(NAME): $(OBJS)
+	ar rc $(NAME) $(OBJS)
+	
 clean:
-	@echo cleaning .o files...
-	@rm -f $(LIBFT_OBJ)
+	rm -f $(OBJS)
 
 fclean: clean
-	@echo cleaning folders...
-	@rm -f $(NAME)
-	@rm -f objs	
+	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all bonus clean fclean re
