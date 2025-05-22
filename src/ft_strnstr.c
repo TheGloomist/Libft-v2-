@@ -1,5 +1,16 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_strnstr.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: iazaitce <iazaitce@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2025/05/22 14:33:00 by iazaitce      #+#    #+#                 */
+/*   Updated: 2025/05/22 14:33:02 by iazaitce      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
