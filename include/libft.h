@@ -6,7 +6,7 @@
 /*   By: iazaitce <iazaitce@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/04/30 14:52:30 by iazaitce      #+#    #+#                 */
-/*   Updated: 2025/05/21 01:08:32 by lindsay       ########   odam.nl         */
+/*   Updated: 2025/05/22 00:50:24 by lindsay       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <stdbool.h>
 
 int ft_isalpha(int c);
 int ft_isdigit(int c);
@@ -40,6 +41,9 @@ int	ft_atoi(const char *nptr);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strdup(const char *s);
-
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char *ft_strjoin(char const *s1, char const *s2);
+char *ft_strtrim(char const *s1, char const *set);
 
 #endif // LIBFT_H
