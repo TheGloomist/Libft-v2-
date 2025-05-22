@@ -6,13 +6,13 @@
 /*   By: iazaitce <iazaitce@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/22 14:31:33 by iazaitce      #+#    #+#                 */
-/*   Updated: 2025/05/22 14:31:36 by iazaitce      ########   odam.nl         */
+/*   Updated: 2025/05/22 14:36:42 by iazaitce      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, '\0', n);
 }

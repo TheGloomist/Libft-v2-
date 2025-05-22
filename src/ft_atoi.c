@@ -6,7 +6,7 @@
 /*   By: iazaitce <iazaitce@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/21 16:12:34 by iazaitce      #+#    #+#                 */
-/*   Updated: 2025/05/21 16:12:37 by iazaitce      ########   odam.nl         */
+/*   Updated: 2025/05/22 14:35:55 by iazaitce      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	ft_atoi(const char *nptr)
 {
 	size_t		i;
-	int		sign;
-	int		conv;
+	int			sign;
+	int			conv;
 
 	i = 0;
 	sign = 1;

@@ -6,7 +6,7 @@
 /*   By: iazaitce <iazaitce@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/19 14:40:22 by iazaitce      #+#    #+#                 */
-/*   Updated: 2025/05/21 00:57:05 by lindsay       ########   odam.nl         */
+/*   Updated: 2025/05/22 14:44:17 by iazaitce      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	len = ft_strlen(src);
 	size_buf = size;
 	if (size < 1 || src[size] != '\0')
-	{ 
+	{
 		while (size_buf--)
 			dst[size_buf - 1] = src[size_buf - 1];
-		dst[size] = '\0';	
+		dst[size] = '\0';
 	}
 	else
 		return (0);

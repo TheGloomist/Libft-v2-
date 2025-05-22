@@ -6,7 +6,7 @@
 /*   By: iazaitce <iazaitce@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/19 15:47:10 by iazaitce      #+#    #+#                 */
-/*   Updated: 2025/05/21 01:09:03 by lindsay       ########   odam.nl         */
+/*   Updated: 2025/05/22 14:43:27 by iazaitce      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@ size_t	strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	len_d;
 	size_t	i;
-	// size_t	to_cat;
-	
+
 	len_d = ft_strlen(dst);
 	i = 0;
-	// to_cat = size - len_d - 1;
 	if (size > 0 && dst)
 	{
 		while (src[i] && i <= (size - len_d - 1))

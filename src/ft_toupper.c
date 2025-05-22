@@ -6,7 +6,7 @@
 /*   By: iazaitce <iazaitce@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/19 18:19:10 by iazaitce      #+#    #+#                 */
-/*   Updated: 2025/05/22 14:33:43 by iazaitce      ########   odam.nl         */
+/*   Updated: 2025/05/22 14:48:21 by iazaitce      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_toupper(int c)
 {
-	if(c >= 'a' && c <= 'z')
+	if (c >= 'a' && c <= 'z')
 	{
 		return (c - 32);
 	}

@@ -6,7 +6,7 @@
 /*   By: iazaitce <iazaitce@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/22 14:33:18 by iazaitce      #+#    #+#                 */
-/*   Updated: 2025/05/22 14:33:20 by iazaitce      ########   odam.nl         */
+/*   Updated: 2025/05/22 14:47:14 by iazaitce      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 static bool	ft_is_in_set(char const *set, char c)
 {
-	while(*set)
+	while (*set)
 	{
-		if(*set == c)
-			return(true);
+		if (*set == c)
+			return (true);
 		*set++;
 	}
-	return(false);
+	return (false);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	end;
 
-	if(!s1 || !set)
+	if (!s1 || !set)
 		return (NULL);
-	while(s1 && (ft_is_in_set(set, *s1) == true))
+	while (s1 && (ft_is_in_set(set, *s1) == true))
 		*s1++;
 	i = 0;
 	end = 0;

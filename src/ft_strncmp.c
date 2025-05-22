@@ -6,10 +6,9 @@
 /*   By: iazaitce <iazaitce@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/22 14:32:49 by iazaitce      #+#    #+#                 */
-/*   Updated: 2025/05/22 14:32:50 by iazaitce      ########   odam.nl         */
+/*   Updated: 2025/05/22 14:44:57 by iazaitce      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 

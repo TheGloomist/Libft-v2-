@@ -6,7 +6,7 @@
 /*   By: iazaitce <iazaitce@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/19 18:32:03 by iazaitce      #+#    #+#                 */
-/*   Updated: 2025/05/21 00:47:32 by lindsay       ########   odam.nl         */
+/*   Updated: 2025/05/22 14:48:11 by iazaitce      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_tolower(int c)
 {
-	if(c >= 'A' && c <= 'Z')
+	if (c >= 'A' && c <= 'Z')
 	{
 		return (c + 32);
 	}
