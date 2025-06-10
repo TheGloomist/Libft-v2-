@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memcmp.c                                        :+:    :+:            */
+/*   ft_strdup.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: iazaitce <iazaitce@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2025/05/22 14:32:08 by iazaitce      #+#    #+#                 */
-/*   Updated: 2025/05/22 14:38:41 by iazaitce      ########   odam.nl         */
+/*   Created: 2025/05/22 14:32:26 by iazaitce      #+#    #+#                 */
+/*   Updated: 2025/06/08 19:25:47 by iazaitce      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strdup(const char *s)
 {
-	size_t	i;
+	char	*new_s;
+	size_t	len;
 
-	i = 0;
-	if (n == 0)
-		return (0);
-	while (i < n && *(unsigned char *)(s1 + i) == *(unsigned char *)(s2 + i))
-		i++;
-	return (*(unsigned char *)(s1 + i) - *(unsigned char *)(s2 + i));
+	len = ft_strlen(s);
+	if (!s)
+		return (NULL);
+	new_s = (char *)malloc(sizeof(char) * (len + 1));
+	if (!new_s)
+		return (NULL);
+	ft_strlcpy(new_s, s, len + 1);
+	return (new_s);
 }

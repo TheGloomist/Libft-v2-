@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strnstr.c                                       :+:    :+:            */
+/*   ft_memcmp.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: iazaitce <iazaitce@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2025/05/22 14:33:00 by iazaitce      #+#    #+#                 */
-/*   Updated: 2025/05/22 14:45:43 by iazaitce      ########   odam.nl         */
+/*   Created: 2025/05/22 14:32:08 by iazaitce      #+#    #+#                 */
+/*   Updated: 2025/06/08 19:31:36 by iazaitce      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	to_check;
 	size_t	i;
 
-	if (!little)
-		return ((char *)big);
-	to_check = 0;
 	i = 0;
-	while (big[to_check] && to_check < len)
-	{
-		while (big[to_check + i] == little[i] && little[i])
+	if (n == 0)
+		return (0);
+	while (i < n)
 		{
+			if(*(unsigned char *)(s1 + i) != *(unsigned char *)(s2 + i))
+				return (*(unsigned char *)(s1 + i) - *(unsigned char *)(s2 + i));
 			i++;
-			if (i == ft_strlen(little))
-				return ((char *)(big + to_check));
 		}
-		to_check++;
-		i = 0;
-	}
-	return (NULL);
+	return (0);
 }

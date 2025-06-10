@@ -6,7 +6,7 @@
 /*   By: iazaitce <iazaitce@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/04/30 15:04:55 by iazaitce      #+#    #+#                 */
-/*   Updated: 2025/05/22 14:48:55 by iazaitce      ########   odam.nl         */
+/*   Updated: 2025/05/22 14:51:04 by iazaitce      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,3 +17,4 @@ int	ft_isascii(int c)
 	if (c >= 0 && c <= 127)
 		return (1);
 	return (0);
+}

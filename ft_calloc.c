@@ -6,7 +6,7 @@
 /*   By: iazaitce <iazaitce@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/22 14:31:47 by iazaitce      #+#    #+#                 */
-/*   Updated: 2025/05/22 14:37:40 by iazaitce      ########   odam.nl         */
+/*   Updated: 2025/05/29 17:48:18 by iazaitce      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*ptr;
 
 	to_allocate = nmemb * size;
-	if (!nmemb || !size || to_allocate > INT_MAX)
+	if (to_allocate > INT_MAX)
 		return (NULL);
 	ptr = malloc(to_allocate);
 	if (!ptr)

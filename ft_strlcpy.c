@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memmove.c                                       :+:    :+:            */
+/*   ft_strlcpy.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: iazaitce <iazaitce@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2025/05/19 14:24:24 by iazaitce      #+#    #+#                 */
-/*   Updated: 2025/05/22 14:39:51 by iazaitce      ########   odam.nl         */
+/*   Created: 2025/05/19 14:40:22 by iazaitce      #+#    #+#                 */
+/*   Updated: 2025/05/29 17:37:14 by iazaitce      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	// char	*temp;
-	
-	if (!dest && !src)
-		return (NULL);
-	// ft_memcpy(temp, src, n);
-	ft_memcpy(dest, src, n);
-	return (dest);
+	size_t	len;
+	size_t	i;
+
+	len = ft_strlen(src);
+	i = 0;
+	if (size != 0)
+	{
+		while (src[i] && i < (size - 1))
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
+	}
+	return (len);
 }
-// TODO: fix dis

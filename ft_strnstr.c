@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strlcat.c                                       :+:    :+:            */
+/*   ft_strnstr.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: iazaitce <iazaitce@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2025/05/19 15:47:10 by iazaitce      #+#    #+#                 */
-/*   Updated: 2025/05/22 14:43:27 by iazaitce      ########   odam.nl         */
+/*   Created: 2025/05/22 14:33:00 by iazaitce      #+#    #+#                 */
+/*   Updated: 2025/06/07 21:13:17 by iazaitce      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	strlcat(char *dst, const char *src, size_t size)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t	len_d;
+	size_t	to_check;
 	size_t	i;
 
-	len_d = ft_strlen(dst);
+	if (!little[0])
+		return ((char *)big);
+	to_check = 0;
 	i = 0;
-	if (size > 0 && dst)
+	while (big[to_check] && to_check < len)
 	{
-		while (src[i] && i <= (size - len_d - 1))
+		while (big[to_check + i] == little[i] && little[i])
 		{
-			dst[len_d + i] = src[i];
 			i++;
+			if (to_check + ft_strlen(little) > len)
+				return(NULL);
+			if (i == ft_strlen(little))
+				return ((char *)(big + to_check));
 		}
-		dst[len_d + i] = '\0';
+		to_check++;
+		i = 0;
 	}
-	return (len_d + ft_strlen(src));
+	return (NULL);
 }

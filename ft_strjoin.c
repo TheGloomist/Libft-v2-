@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_isprint.c                                       :+:    :+:            */
+/*   ft_strjoin.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: iazaitce <iazaitce@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2025/04/30 15:16:09 by iazaitce      #+#    #+#                 */
-/*   Updated: 2025/05/21 01:02:47 by lindsay       ########   odam.nl         */
+/*   Created: 2025/05/22 14:32:36 by iazaitce      #+#    #+#                 */
+/*   Updated: 2025/06/08 19:24:29 by iazaitce      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	if (c >= ' ' && c >= '~')
-		return (1);
-	return (0);
+	char	*new_str;
+	size_t	s1_len;
+	size_t	s2_len;
+
+	if (!s1 || !s2)
+		return (NULL);
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	new_str = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
+	if (!new_str)
+		return (NULL);
+	ft_memcpy(new_str, s1, s1_len);
+	ft_strlcpy(new_str + s1_len, s2, s2_len + 1);
+	new_str[s1_len + s2_len] = '\0';
+	return (new_str);
 }
