@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strnstr.c                                       :+:    :+:            */
+/*   ft_strmapi.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: iazaitce <iazaitce@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2025/05/22 14:33:00 by iazaitce      #+#    #+#                 */
-/*   Updated: 2025/06/12 19:15:44 by iazaitce      ########   odam.nl         */
+/*   Created: 2025/06/11 18:47:17 by iazaitce      #+#    #+#                 */
+/*   Updated: 2025/06/12 19:17:27 by iazaitce      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	to_check;
+	char	*result_str;
 	size_t	i;
 
-	if (!little[0])
-		return ((char *)big);
-	to_check = 0;
+	if (!s)
+		return (NULL);
+	result_str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!result_str)
+		return (NULL);
 	i = 0;
-	while (big[to_check] && to_check < len)
+	while (i < ft_strlen(s))
 	{
-		while (big[to_check + i] == little[i] && little[i])
-		{
-			i++;
-			if (to_check + ft_strlen(little) > len)
-				return (NULL);
-			if (i == ft_strlen(little))
-				return ((char *)(big + to_check));
-		}
-		to_check++;
-		i = 0;
+		result_str[i] = f(i, s[i]);
+		i++;
 	}
-	return (NULL);
+	result_str[i] = '\0';
+	return (result_str);
 }

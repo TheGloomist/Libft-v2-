@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strlcat.c                                       :+:    :+:            */
+/*   ft_putnbr_fd.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: iazaitce <iazaitce@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2025/05/19 15:47:10 by iazaitce      #+#    #+#                 */
-/*   Updated: 2025/06/12 19:14:58 by iazaitce      ########   odam.nl         */
+/*   Created: 2025/06/11 20:26:56 by iazaitce      #+#    #+#                 */
+/*   Updated: 2025/06/12 19:17:53 by iazaitce      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	len_d;
-	size_t	len_s;
-	size_t	i;
+	long	num;
 
-	len_d = ft_strlen(dst);
-	len_s = ft_strlen(src);
-	i = 0;
-	if (len_d >= size)
-		return (len_s + size);
-	while (src[i] && len_d + i < size - 1)
+	num = n;
+	if (num < 0)
 	{
-		dst[len_d + i] = src[i];
-		i++;
+		write(fd, "-", 1);
+		num = num * -1;
 	}
-	dst[len_d + i] = '\0';
-	return (len_d + len_s);
+	if (num > 9)
+	{
+		ft_putnbr_fd(num / 10, fd);
+	}
+	num = num % 10 + '0';
+	write(fd, &num, 1);
 }
